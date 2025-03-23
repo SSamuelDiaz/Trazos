@@ -12,8 +12,7 @@ public abstract class Trazo {
     public abstract void dibujar(java.awt.Graphics g);
 
     public abstract boolean contiene(int x, int y);
-
-    // Métodos de serialización
+    
     public abstract String serializar();
 
     public static Trazo deserializar(String data) {

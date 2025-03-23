@@ -29,7 +29,7 @@ public class FrmTrazos extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                setBackground(Color.BLACK); // Fondo negro
+                setBackground(Color.BLACK);
                 dibujarTrazos(g);
             }
         };
@@ -56,8 +56,7 @@ public class FrmTrazos extends JFrame {
         add(pnlHerramientas, BorderLayout.NORTH);
         add(pnlDibujo, BorderLayout.CENTER);
         add(new JScrollPane(lstTrazos), BorderLayout.EAST);
-
-        // Eventos para guardar, cargar, y activar el modo borrador
+        
         btnGuardar.addActionListener(e -> guardarTrazos());
         btnCargar.addActionListener(e -> cargarTrazos());
         btnBorrar.addActionListener(e -> activarModoBorrador());
@@ -97,8 +96,7 @@ public class FrmTrazos extends JFrame {
                 if (!modoBorrador && trazando) {
                     int xFin = e.getX();
                     int yFin = e.getY();
-
-                    // Actualizar trazo temporal en tiempo real
+                    
                     trazoTemporal = traerTrazoTemporal(xIni, yIni, xFin, yFin);
                     pnlDibujo.repaint();
                 }
@@ -107,7 +105,7 @@ public class FrmTrazos extends JFrame {
     }
 
     private void agregarTrazo(int x1, int y1, int x2, int y2) {
-        Color color = Color.WHITE; // Color blanco para las figuras finales
+        Color color = Color.WHITE;
         Trazo trazo = null;
 
         switch (cmbTipoTrazo.getSelectedIndex()) {
@@ -132,7 +130,7 @@ public class FrmTrazos extends JFrame {
     }
 
     private Trazo traerTrazoTemporal(int x1, int y1, int x2, int y2) {
-        Color color = Color.LIGHT_GRAY; // Color gris claro para el trazo temporal
+        Color color = Color.LIGHT_GRAY;
         switch (cmbTipoTrazo.getSelectedIndex()) {
             case 0:
                 return new Linea(x1, y1, x2, y2, color);
@@ -153,8 +151,7 @@ public class FrmTrazos extends JFrame {
         for (Trazo trazo : listaTrazos.obtenerTodos()) {
             trazo.dibujar(g);
         }
-
-        // Dibujar el trazo temporal si existe
+        
         if (trazoTemporal != null) {
             trazoTemporal.dibujar(g);
         }
