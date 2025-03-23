@@ -1,0 +1,14 @@
+Linea,124,111,144,241,ffffffff
+Rectangulo,259,102,91,172,ffffffff
+Ovalo,247,18,114,83,ffffffff
+Linea,339,68,363,88,ffffffff
+Linea,344,57,382,70,ffffffff
+Linea,339,48,385,49,ffffffff
+Linea,266,62,230,60,ffffffff
+Linea,263,72,243,79,ffffffff
+Linea,271,81,236,96,ffffffff
+Ovalo,302,47,9,21,ffffffff
+Rectangulo,281,40,16,4,ffffffff
+Rectangulo,318,43,12,3,ffffffff
+Ovalo,290,76,30,14,ffffffff
+Ovalo,350,121,0,0,ffffffff
